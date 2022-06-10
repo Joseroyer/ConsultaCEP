@@ -1,6 +1,5 @@
 package consultar.cep.project.Controller;
 
-
 import consultar.cep.project.Model.Endereco;
 import consultar.cep.project.Repository.EnderecoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,14 +20,27 @@ public class EnderecoController {
     List<Endereco> end;
 
     @RequestMapping("/teste")
-    public String home(){
+    public String home() {
         return "Hello World!";
     }
+
     @GetMapping("/listar")
-    public ResponseEntity<Object> listar_all(){
+    public ResponseEntity<Object> listar_all() {
         end = eRepository.findAll();
         return new ResponseEntity<>(end, HttpStatus.OK);
     }
+
     @GetMapping("/listar-todos")
-    public List<Endereco> getEndereco(){return this.eRepository.findAll();}
+    public List<Endereco> getEndereco() {
+        return this.eRepository.findAll();
+    }
+    
+    @GetMapping("/consultarCEP")
+    public ResponseEntity<Object> listar_ceps(@RequestParam(value = "filtro") String filtro) {
+        if (filtro.length() < 9) {
+            end = eRepository.findAllWithFilter(filtro);
+            return new ResponseEntity<>(end, HttpStatus.OK);
+        } else
+            return new ResponseEntity<>("CEP INVALIDO", HttpStatus.NOT_FOUND);
+    }
 }
