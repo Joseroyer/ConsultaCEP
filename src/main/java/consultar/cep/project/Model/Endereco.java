@@ -1,9 +1,9 @@
 package consultar.cep.project.Model;
+
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
-@Table(name = "endereco")
+@Table(name="endereco")
 public class Endereco {
     @Id
     @Column(name = "end_cep")
@@ -61,5 +61,4 @@ public class Endereco {
     public void setFk_bairro(Bairro fk_bairro) {
         this.fk_bairro = fk_bairro;
     }
-
 }

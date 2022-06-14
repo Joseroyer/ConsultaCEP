@@ -1,12 +1,13 @@
 package consultar.cep.project.Model;
 
 
-import javax.persistence.*;
 import java.io.Serializable;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "cidade")
-public class Cidade  implements Serializable {
+@Table(name="cidade")
+public class Cidade implements Serializable {
+
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
