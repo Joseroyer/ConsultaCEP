@@ -2,15 +2,15 @@ function appendTabela(data) {
     var table = "";
     // document.querySelector("#tabela").classList.remove("d-none");
     table += `<tr><th>CEP</th><th>Local</th><th>Cidade</th><th>Bairro</th></tr>`
-    for (let i = 0; i < data.length; i++)
+    for (let i = 0; i < data.length; i++) {
         table += `<tr>
-            <td>${data[i].cep}</td>
-            <td>${data[i].local}</td>
-            <td>${data[i].fk_cidade}</td>
-            <td>${data[i].fk_bairro}</td>
-            </tr>`;
+        <td>${data[i].cep}</td>
+        <td>${data[i].local}</td>
+        <td>${data[i].fk_cidade}</td>
+        <td>${data[i].fk_bairro}</td>
+        </tr>`;
+    }
     document.getElementById("result").innerHTML = table;
-
 }
 
 function pesquisar() {
