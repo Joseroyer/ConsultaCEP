@@ -43,6 +43,7 @@ function appendTabela(data) {
         table += `<tr>
         <td>${data[i].cep}</td>
         <td>${data[i].fk_cidade.nome}</td>
+        <td>${data[i].fk_cidade.estado}</td>
         <td>${data[i].local}</td>
         <td>${data[i].fk_bairro.nome}</td>
         </tr>`;
