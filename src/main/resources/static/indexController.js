@@ -48,13 +48,12 @@ function appendTabela(data) {
         <td>${data[i].fk_bairro.nome}</td>
         </tr>`;
     }
-    console.log(table);
+    // console.log(table);
     document.getElementById("result").innerHTML = table;
 }
 function pesquisar() {
     var filtro = document.getElementById("buscar").value;
     filtro = filtro.replace("-", "").replace(".", "");
-    console.log(filtro);
     fetch("/ConsultarCEP?filtro=" + filtro)
         .then(function (response) {
             return response.json();
@@ -63,6 +62,6 @@ function pesquisar() {
             appendTabela(data);
         })
         .catch(function (err) {
-            console.log('Error' + err);
+            console.error(err);
         });
 }
