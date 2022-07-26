@@ -19,6 +19,7 @@ import java.util.List;
 public class EnderecoController {
     @Autowired
     EnderecoRepository enderecoRepository;
+    Endereco endModal;
     List<Endereco> end;
 
     @GetMapping("/listar-ceps")
@@ -30,10 +31,10 @@ public class EnderecoController {
 
     @GetMapping("/ConsultarCEP")
     public ResponseEntity<Object> consultarCep (@RequestParam(required=false,name="filtro") String filter){
-        if(filter.length() < 9){
+        List <Endereco> aux;
+        if(enderecoRepository.findAllWithFilter(filter)!=null){
             end = enderecoRepository.findAllWithFilter(filter);
             return new ResponseEntity<>(end, HttpStatus.OK);
-
         }
         else    return new ResponseEntity<>("CEP NÃO ENCONTRADO", HttpStatus.NOT_FOUND);
     }
