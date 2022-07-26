@@ -35,7 +35,7 @@ public class EnderecoController {
             return new ResponseEntity<>(end, HttpStatus.OK);
 
         }
-        else    return new ResponseEntity<>("CEP INVÁLIDO", HttpStatus.NOT_FOUND);
+        else    return new ResponseEntity<>("CEP NÃO ENCONTRADO", HttpStatus.NOT_FOUND);
     }
 
 }

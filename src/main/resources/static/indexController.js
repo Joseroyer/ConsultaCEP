@@ -42,8 +42,8 @@ function appendTabela(data) {
     for (let i = 0; i < data.length; i++) {
         table += `<tr>
         <td>${data[i].cep}</td>
-        <td>${data[i].local}</td>
         <td>${data[i].fk_cidade.nome}</td>
+        <td>${data[i].local}</td>
         <td>${data[i].fk_bairro.nome}</td>
         </tr>`;
     }
