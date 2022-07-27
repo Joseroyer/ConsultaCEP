@@ -38,17 +38,19 @@ function mascara(m, t, e) {
 
 function appendTabela(data) {
     var table = "";
-    // document.querySelector("#tabela").classList.remove("d-none")
-    for (let i = 0; i < data.length; i++) {
-        table += `<tr>
-        <td>${data[i].cep}</td>
-        <td>${data[i].fk_cidade.nome}</td>
-        <td>${data[i].fk_cidade.estado}</td>
-        <td>${data[i].local}</td>
-        <td>${data[i].fk_bairro.nome}</td>
-        </tr>`;
+    if(!data.length)
+            table += `<td colspan="5">O CEP NÃO ENCONTRADO!!</td>`
+    else{
+        for (let i = 0; i < data.length; i++) {
+            table += `<tr>
+            <td>${data[i].cep}</td>
+            <td>${data[i].fk_cidade.nome}</td>
+            <td>${data[i].fk_cidade.estado}</td>
+            <td>${data[i].local}</td>
+            <td>${data[i].fk_bairro.nome}</td>
+            </tr>`;
+        }
     }
-    // console.log(table);
     document.getElementById("result").innerHTML = table;
 }
 function pesquisar() {
