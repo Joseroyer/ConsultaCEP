@@ -19,19 +19,14 @@ import java.util.List;
 public class EnderecoController {
     @Autowired
     EnderecoRepository enderecoRepository;
-    Endereco endModal;
     List<Endereco> end;
-
     @GetMapping("/listar-ceps")
     public ResponseEntity<Object> listarAll(){
         end = enderecoRepository.findAll();
         return new ResponseEntity<>(end, HttpStatus.OK);
     }
-
-
     @GetMapping("/ConsultarCEP")
     public ResponseEntity<Object> consultarCep (@RequestParam(required=false,name="filtro") String filter){
-        List <Endereco> aux;
         if(enderecoRepository.findAllWithFilter(filter)!=null){
             end = enderecoRepository.findAllWithFilter(filter);
             return new ResponseEntity<>(end, HttpStatus.OK);
