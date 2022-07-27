@@ -35,7 +35,6 @@ function mascara(m, t, e) {
     if (cursorfixo && !livre) cursor--;
     t.setSelectionRange(cursor, cursor);
 }
-
 function appendTabela(data) {
     var table = "";
     if(!data.length)
