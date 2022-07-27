@@ -39,7 +39,7 @@ function mascara(m, t, e) {
 function appendTabela(data) {
     var table = "";
     if(!data.length)
-            table += `<td colspan="5">O CEP NÃO ENCONTRADO!!</td>`
+            table += `<td colspan="5" style="color: red">O CEP NÃO ENCONTRADO!!</td>`
     else{
         for (let i = 0; i < data.length; i++) {
             table += `<tr>
