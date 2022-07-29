@@ -20,7 +20,7 @@ public class Endereco {
     @JoinColumn(name = "bai_id", nullable = false)
     private Bairro fk_bairro;
 
-    public Endereco(){
+    public Endereco() {
     }
 
     public Endereco(String cep, String local, Cidade fk_cidade, Bairro fk_bairro) {

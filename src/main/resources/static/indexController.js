@@ -35,11 +35,12 @@ function mascara(m, t, e) {
     if (cursorfixo && !livre) cursor--;
     t.setSelectionRange(cursor, cursor);
 }
+
 function appendTabela(data) {
     var table = "";
-    if(!data.length)
-            table += `<td colspan="5" style="color: red">O CEP NÃO ENCONTRADO!!</td>`
-    else{
+    if (!data.length)
+        table += `<td colspan="5" style="color: red">O CEP NÃO ENCONTRADO!!</td>`
+    else {
         for (let i = 0; i < data.length; i++) {
             table += `<tr>
             <td>${data[i].cep}</td>
@@ -52,6 +53,7 @@ function appendTabela(data) {
     }
     document.getElementById("result").innerHTML = table;
 }
+
 function pesquisar() {
     var filtro = document.getElementById("buscar").value;
     filtro = filtro.replace("-", "").replace(".", "");

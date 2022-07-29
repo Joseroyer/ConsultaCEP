@@ -9,17 +9,17 @@ public class Bairro implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="bai_id")
+    @Column(name = "bai_id")
     private Long id;
 
-    @Column(name="bai_nome")
+    @Column(name = "bai_nome")
     private String nome;
 
     @ManyToOne
     @JoinColumn(name = "cid_id", nullable = false)
     private Cidade fk_cidade;
 
-    public Bairro(){
+    public Bairro() {
 
     }
 

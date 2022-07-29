@@ -20,18 +20,19 @@ public class EnderecoController {
     @Autowired
     EnderecoRepository enderecoRepository;
     List<Endereco> end;
+
     @GetMapping("/listar-ceps")
-    public ResponseEntity<Object> listarAll(){
+    public ResponseEntity<Object> listarAll() {
         end = enderecoRepository.findAll();
         return new ResponseEntity<>(end, HttpStatus.OK);
     }
+
     @GetMapping("/ConsultarCEP")
-    public ResponseEntity<Object> consultarCep (@RequestParam(required=false,name="filtro") String filter){
-        if(enderecoRepository.findAllWithFilter(filter)!=null){
+    public ResponseEntity<Object> consultarCep(@RequestParam(required = false, name = "filtro") String filter) {
+        if (enderecoRepository.findAllWithFilter(filter) != null) {
             end = enderecoRepository.findAllWithFilter(filter);
             return new ResponseEntity<>(end, HttpStatus.OK);
-        }
-        else    return new ResponseEntity<>("CEP NÃO ENCONTRADO", HttpStatus.NOT_FOUND);
+        } else return new ResponseEntity<>("CEP NÃO ENCONTRADO", HttpStatus.NOT_FOUND);
     }
 
 }

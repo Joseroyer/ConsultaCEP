@@ -5,37 +5,44 @@ html {
     padding: 0px;
     margin: 0px;
 }
+
 body {
     font-family: sans-serif;
     background: linear-gradient(#141e30, #243b55);
     color: white;
 }
-th,td{
+
+th, td {
     text-align: center;
     font-size: 16px;
     color: white;
 }
-.header{
+
+.header {
     text-align: center;
 }
-.card{
+
+.card {
     top: 50%;
-    background: rgba(0,0,0,.5);
+    background: rgba(0, 0, 0, .5);
     border-radius: 10px;
     box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.5);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .5);
 }
-footer{
-    background: rgba(0,0,0,.5);
+
+footer {
+    background: rgba(0, 0, 0, .5);
     height: 50px;
     width: 100%;
     position: absolute;
     padding: 5px;
 }
-footer{
+
+footer {
     bottom: 0px;
 }
-footer div{
+
+footer div {
     color: white;
     font-size: 20px;
     text-align: center;
